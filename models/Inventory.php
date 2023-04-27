@@ -30,14 +30,7 @@ class Inventory extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['description'], 'string'],
-            // [['created_by'], 'integer'],
-
-            // ensure empty values are stored as NULL in the database
-            ['created_by', 'default', 'value' => null],
-
-            // validate the date and overwrite `created_by` with the unix timestamp
-            ['created_by', 'date', 'timestampAttribute' => 'created_by'],
-
+            [['created_by'], 'integer'],
             [['name'], 'string', 'max' => 255],
 
         ];
